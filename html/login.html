@@ -64,12 +64,16 @@
           function otpless(otplessUser) {
             var waName = otplessUser.waName;
             var waNumber = otplessUser.waNumber;
+            onclick = "page()";
             // Send waName and waNumber to server for authentication
             // If authentication succeeds, redirect to next page
             // Otherwise, display error message
             // This is just a dummy example, replace the following code with your actual authentication logic
-            if (waNumber === "1234567890" && waName === "John Doe") {
-              window.location.href = "dummy.html";
+            if (
+              waNumber === otplessUser.waNumber &&
+              waName === otplessUser.waName
+            ) {
+              window.location.href = "./about.html";
             } else {
               alert("Invalid credentials");
             }
